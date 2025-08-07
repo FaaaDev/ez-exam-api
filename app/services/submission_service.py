@@ -141,7 +141,8 @@ class SubmissionService:
         existing_stmt = select(Submission).where(
             and_(
                 Submission.user_id == user_id,
-                Submission.attempt_id == submission.attempt_id
+                Submission.attempt_id == submission.attempt_id,
+                Submission.problem_id == problem_id
             )
         )
         existing_result = await db.execute(existing_stmt)
