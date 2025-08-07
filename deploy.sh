@@ -40,7 +40,7 @@ python3 scripts/seed_data.py
 
 # Run acceptance tests
 echo "🧪 Running acceptance tests..."
-python3 -m uvicorn app.main_v2:app --host 0.0.0.0 --port 8000 &
+python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000 &
 SERVER_PID=$!
 
 # Wait for server to start

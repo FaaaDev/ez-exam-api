@@ -1,8 +1,8 @@
-# Learning Platform API
+# EzExam API
 
 A FastAPI-based learning platform with **asynchronous** PostgreSQL backend, featuring improved maintainability, better project structure, and enhanced performance.
 
-### ✨ **Improved Architecture**
+### ✨ **Architecture**
 - **Modular Structure**: Separated routes, schemas, models, and services into dedicated directories
 - **Async Operations**: Full asynchronous database operations for better performance
 - **Better Maintainability**: Clean separation of concerns and improved code organization
@@ -12,36 +12,36 @@ A FastAPI-based learning platform with **asynchronous** PostgreSQL backend, feat
 ```
 learning_platform/
 ├── app/
-│   ├── core/                 # Core configuration and database
-│   │   ├── config.py        # Application settings
-│   │   └── database.py      # Async database configuration
-│   ├── models/              # Database models (separated)
-│   │   ├── base.py          # Base model with common fields
-│   │   ├── user.py          # User model
-│   │   ├── lesson.py        # Lesson model
-│   │   ├── problem.py       # Problem and ProblemOption models
-│   │   ├── submission.py    # Submission model
-│   │   └── user_progress.py # UserProgress model
-│   ├── schemas/             # Pydantic schemas (separated)
-│   │   ├── common.py        # Common schemas
-│   │   ├── lesson.py        # Lesson schemas
-│   │   ├── problem.py       # Problem schemas
-│   │   ├── submission.py    # Submission schemas
-│   │   ├── user.py          # User schemas
-│   │   └── user_progress.py # Progress schemas
-│   ├── services/            # Business logic layer
-│   │   ├── lesson_service.py    # Lesson operations
-│   │   ├── user_service.py      # User operations
-│   │   └── submission_service.py # Submission operations
-│   ├── routes/              # API endpoints (separated)
-│   │   ├── health.py        # Health check endpoints
-│   │   ├── lessons.py       # Lesson endpoints
-│   │   ├── submissions.py   # Submission endpoints
-│   │   └── users.py         # User endpoints
-│   └── main_v2.py          # New async FastAPI application
+│   ├── core/                       # Core configuration and database
+│   │   ├── config.py               # Application settings
+│   │   └── database.py             # Async database configuration
+│   ├── models/                     # Database models (separated)
+│   │   ├── base.py                 # Base model with common fields
+│   │   ├── user.py                 # User model
+│   │   ├── lesson.py               # Lesson model
+│   │   ├── problem.py              # Problem and ProblemOption models
+│   │   ├── submission.py           # Submission model
+│   │   └── user_progress.py        # UserProgress model
+│   ├── schemas/                    # Pydantic schemas (separated)
+│   │   ├── common.py               # Common schemas
+│   │   ├── lesson.py               # Lesson schemas
+│   │   ├── problem.py              # Problem schemas
+│   │   ├── submission.py           # Submission schemas
+│   │   ├── user.py                 # User schemas
+│   │   └── user_progress.py        # Progress schemas
+│   ├── services/                   # Business logic layer
+│   │   ├── lesson_service.py       # Lesson operations
+│   │   ├── user_service.py         # User operations
+│   │   └── submission_service.py   # Submission operations
+│   ├── routes/                     # API endpoints (separated)
+│   │   ├── health.py               # Health check endpoints
+│   │   ├── lessons.py              # Lesson endpoints
+│   │   ├── submissions.py          # Submission endpoints
+│   │   └── users.py                # User endpoints
+│   └── main.py                     # async FastAPI application
 ├── tests/
-│   └── test_acceptance_async.py # Async acceptance tests
-└── requirements.txt         # Updated with async dependencies
+│   └── test_acceptance_async.py    # Async acceptance tests
+└── requirements.txt                # Project dependencies
 ```
 
 ## 🔧 **Technical Improvements**

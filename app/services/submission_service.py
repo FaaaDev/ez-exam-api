@@ -51,7 +51,7 @@ class SubmissionService:
 
         problems_dict = {p.id: p for p in valid_problems}
 
-        problem_option_ids = [answer["otpion_id"]
+        problem_option_ids = [answer["option_id"]
                               for answer in submission.answers]
         problem_option_stmt = select(ProblemOption).where(
             ProblemOption.id.in_(problem_option_ids))

@@ -14,7 +14,6 @@ router = APIRouter(prefix="/api", tags=["Profile"])
 
 @router.get("/profile", response_model=ProfileResponse)
 async def get_profile(db: AsyncSession = Depends(get_async_db)):
-    """Get user statistics (total XP, streak, progress percentage)"""
     try:
         profile = await UserService.get_user_profile(db, user_id=settings.demo_user_id)
         if not profile:

@@ -15,7 +15,6 @@ router = APIRouter(prefix="/api/lessons", tags=["Lessons"])
 
 @router.get("/", response_model=List[LessonWithProgressResponse])
 async def get_lessons(db: AsyncSession = Depends(get_async_db)):
-    """Get list of lessons with progress status for demo user"""
     try:
         lessons = await LessonService.get_lessons_with_progress(db, user_id=settings.demo_user_id)
         return lessons
@@ -29,7 +28,6 @@ async def get_lessons(db: AsyncSession = Depends(get_async_db)):
 
 @router.get("/{lesson_id}", response_model=LessonDetailResponse)
 async def get_lesson_detail(lesson_id: int, db: AsyncSession = Depends(get_async_db)):
-    """Get lesson details with list of questions (without revealing answers)"""
     try:
         lesson = await LessonService.get_lesson_detail(db, lesson_id)
         if not lesson:

@@ -16,7 +16,7 @@ services:
 
   app:
     build: .
-    command: bash -c "./wait-for-it.sh db:5432 -t 60 -- alembic upgrade head && python3 scripts/seed_data.py && uvicorn app.main_v2:app --host 0.0.0.0 --port 8000"
+    command: bash -c "./wait-for-it.sh db:5432 -t 60 -- alembic upgrade head && python3 scripts/seed_data.py && uvicorn app.main:app --host 0.0.0.0 --port 8000"
     volumes:
       - .:/app
     ports:

@@ -10,8 +10,6 @@ logger = logging.getLogger(__name__)
 
 
 class UserService:
-    """Service for user-related operations"""
-    
     @staticmethod
     async def get_user_profile(db: AsyncSession, user_id: int) -> Optional[ProfileResponse]:
         """Get user profile with statistics"""

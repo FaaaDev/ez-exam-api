@@ -11,6 +11,7 @@ DATABASE_URL = os.getenv(
 
 # Create async engine
 engine = create_async_engine(DATABASE_URL, echo=False)
+# Create non async engine (for migrations and seeding)
 non_async_engine = create_engine(DATABASE_URL.replace("+asyncpg", ""), echo=False)
 
 # Create async session maker

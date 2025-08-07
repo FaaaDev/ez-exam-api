@@ -13,7 +13,6 @@ logger = logging.getLogger(__name__)
 class LessonService:
     @staticmethod
     async def get_lessons_with_progress(db: AsyncSession, user_id: int) -> List[LessonWithProgressResponse]:
-        """Get all lessons with progress status for a user"""
         # Get all active lessons
         stmt = select(Lesson).where(Lesson.is_active == True).order_by(Lesson.order_index)
         result = await db.execute(stmt)

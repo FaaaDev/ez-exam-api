@@ -6,7 +6,6 @@ router = APIRouter(tags=["Health"])
 
 @router.get("/")
 async def root():
-    """Root endpoint"""
     return {
         "message": settings.api_title, 
         "version": settings.api_version
@@ -15,7 +14,6 @@ async def root():
 
 @router.get("/health")
 async def health_check():
-    """Health check endpoint"""
     return {
         "status": "healthy", 
         "message": f"{settings.api_title} is running",

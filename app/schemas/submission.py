@@ -20,13 +20,13 @@ class SubmissionRequest(BaseModel):
 
 class SingleSubmissionRequest(BaseModel):
     attempt_id: str = Field(..., min_length=1, max_length=100)
-    answer: dict = Field(..., description="Object of {problem_id: int, answer: str}")
+    answer: dict = Field(..., description="Object of {problem_id: int, option_id: int}")
     
     class Config:
         json_schema_extra = {
             "example": {
                 "attempt_id": "attempt_123456",
-                "answer": {"problem_id": 1, "answer": "8"}
+                "answer": {"problem_id": 1, "option_id": 8}
             }
         }
 
