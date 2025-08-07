@@ -9,10 +9,10 @@ from app.services import UserService
 
 logger = logging.getLogger(__name__)
 
-router = APIRouter(prefix="/api", tags=["Profile"])
+router = APIRouter(prefix="/api/profiles", tags=["Profile"])
 
 
-@router.get("/profile", response_model=ProfileResponse)
+@router.get("/", response_model=ProfileResponse)
 async def get_profile(db: AsyncSession = Depends(get_async_db)):
     try:
         profile = await UserService.get_user_profile(db, user_id=settings.demo_user_id)
